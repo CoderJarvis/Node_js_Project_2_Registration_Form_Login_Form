@@ -6,7 +6,7 @@ require('./db/conn.js');    //database connection
 const { People } = require('./models/schema');  //our collection
 
 const staticPath=path.join(__dirname,'../public')
-app.use(express.static(staticPath));    //for static file serving
+app.use(express.static(staticPath));   //for static file serving
 
 const partialPath=path.join(__dirname,'../templates/partials'); 
 const viewPath=path.join(__dirname,'../templates/views');       
@@ -14,6 +14,7 @@ const viewPath=path.join(__dirname,'../templates/views');
 app.set('view engine','hbs');   //for template engines
 app.set('views',viewPath);      //for view folder
 hbs.registerPartials(partialPath);  //for partial folder
+
 
 app.use(express.urlencoded());  //for form
 
