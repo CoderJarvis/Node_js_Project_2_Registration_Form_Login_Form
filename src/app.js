@@ -2,7 +2,7 @@ var express = require('express')
 const path = require('path');
 const hbs = require('hbs');
 var app = express()
-require('./db/conn.js');    //database connection
+require('./db/conn.js');    //database connection 
 const { People } = require('./models/schema');  //our collection
 
 const staticPath=path.join(__dirname,'../public')
@@ -98,7 +98,7 @@ app.post('/login', async (req, res)=> {
         })
     }
 })
-
-app.listen(3000,() => {
-    console.log(`Server running at 3000`);
+const port = process.env.PORT || 3000
+app.listen(port,() => {
+    console.log(`Server running at ${port}`);
 });
